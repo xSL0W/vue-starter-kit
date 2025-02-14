@@ -27,9 +27,9 @@ const currentPath = window.location.pathname;
     <div class="px-4 py-6">
         <Heading title="Settings" description="Manage your profile and account settings" />
 
-        <div class="flex flex-col space-y-8 md:flex-row md:space-x-12 md:space-y-0">
+        <div class="flex flex-col space-y-8 md:flex-row md:space-y-0 md:space-x-12">
             <aside class="w-full md:w-1/3 lg:w-1/4 xl:w-1/5">
-                <nav class="flex flex-col space-x-0 space-y-1">
+                <nav class="flex flex-col space-y-1 space-x-0">
                     <Button
                         v-for="item in sidebarNavItems"
                         :key="item.href"

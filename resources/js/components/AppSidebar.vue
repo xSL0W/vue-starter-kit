@@ -37,7 +37,7 @@ const footerNavItems: NavItem[] = [
                     <SidebarMenuButton size="lg" as-child>
                         <a href="#">
                             <div
-                                class="flex aspect-square size-8 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground"
+                                class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-md"
                             >
                                 <AppLogo class="size-5 fill-current text-white dark:text-black" />
                             </div>
