@@ -13,7 +13,6 @@ import SettingsLayout from '@/layouts/settings/Layout.vue';
 import { type BreadcrumbItem, type SharedData, type User } from '@/types';
 
 interface Props {
-    mustVerifyEmail: boolean;
     status?: string;
     className?: string;
 }
@@ -57,26 +56,8 @@ const submit = () => {
 
                     <div class="grid gap-2">
                         <Label for="email">Email Address</Label>
-                        <Input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autocomplete="username" />
+                        <Input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autocomplete="username" disabled />
                         <InputError class="mt-2" :message="form.errors.email" />
-                    </div>
-
-                    <div v-if="mustVerifyEmail && !user.email_verified_at">
-                        <p class="mt-2 text-sm text-gray-800">
-                            Your email address is unverified.
-                            <Link
-                                :href="route('verification.send')"
-                                method="post"
-                                as="button"
-                                class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Click here to re-send the verification email.
-                            </Link>
-                        </p>
-
-                        <div v-if="status === 'verification-link-sent'" class="mt-2 text-sm font-medium text-green-600">
-                            A new verification link has been sent to your email address.
-                        </div>
                     </div>
 
                     <div class="flex items-center gap-4">
