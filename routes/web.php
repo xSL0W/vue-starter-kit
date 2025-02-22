@@ -1,14 +1,10 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\WorkOS\Http\Middleware\ValidateSessionWithWorkOS;
 
-Route::get('/', fn () => Inertia::render('Welcome', [
-    'laravelVersion' => Application::VERSION,
-    'phpVersion' => PHP_VERSION,
-]));
+Route::get('/', fn () => Inertia::render('Welcome'));
 
 Route::middleware([
     'auth',

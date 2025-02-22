@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-
-defineProps<{
-    laravelVersion: string;
-    phpVersion: string;
-}>();
 </script>
 
 <template>
