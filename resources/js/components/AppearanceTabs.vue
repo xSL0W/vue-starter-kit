@@ -6,9 +6,7 @@ interface Props {
     class?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-    class: '',
-});
+const { class: containerClass = '' } = defineProps<Props>();
 
 const { appearance, updateAppearance } = useAppearance();
 
@@ -20,7 +18,7 @@ const tabs = [
 </script>
 
 <template>
-    <div :class="['inline-flex gap-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800', props.class]">
+    <div :class="['inline-flex gap-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800', containerClass]">
         <button
             v-for="{ value, Icon, label } in tabs"
             :key="value"
