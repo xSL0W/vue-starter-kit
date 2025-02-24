@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TransitionRoot } from '@headlessui/vue';
-import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
 
 import DeleteUser from '@/components/DeleteUser.vue';
 import HeadingSmall from '@/components/HeadingSmall.vue';
@@ -21,7 +21,7 @@ defineProps<Props>();
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Profile Settings',
+        title: 'Profile settings',
         href: '/settings/profile',
     },
 ];
@@ -41,21 +41,21 @@ const submit = () => {
 
 <template>
     <AppLayout :breadcrumbs="breadcrumbs">
-        <Head title="Profile Settings" />
+        <Head title="Profile settings" />
 
         <SettingsLayout>
             <div class="flex flex-col space-y-6">
-                <HeadingSmall title="Profile Information" description="Update your name and email address" />
+                <HeadingSmall title="Profile information" description="Update your name and email address" />
 
                 <form @submit.prevent="submit" class="space-y-6">
                     <div class="grid gap-2">
                         <Label for="name">Name</Label>
-                        <Input id="name" class="mt-1 block w-full" v-model="form.name" required autocomplete="name" />
+                        <Input id="name" class="mt-1 block w-full" v-model="form.name" required autocomplete="name" placeholder="Full name" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
 
                     <div class="grid gap-2">
-                        <Label for="email">Email Address</Label>
+                        <Label for="email">Email address</Label>
                         <Input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autocomplete="username" disabled />
                         <InputError class="mt-2" :message="form.errors.email" />
                     </div>
@@ -70,7 +70,7 @@ const submit = () => {
                             leave="transition ease-in-out"
                             leave-to="opacity-0"
                         >
-                            <p class="text-sm text-gray-600">Saved.</p>
+                            <p class="text-sm text-neutral-600">Saved.</p>
                         </TransitionRoot>
                     </div>
                 </form>
