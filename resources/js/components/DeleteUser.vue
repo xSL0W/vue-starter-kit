@@ -54,7 +54,7 @@ const closeModal = () => {
                             </DialogDescription>
                         </DialogHeader>
 
-                        <DialogFooter>
+                        <DialogFooter class="gap-2">
                             <DialogClose as-child>
                                 <Button variant="secondary" @click="closeModal"> Cancel </Button>
                             </DialogClose>
