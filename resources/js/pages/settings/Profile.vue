@@ -14,7 +14,6 @@ import { type BreadcrumbItem, type SharedData, type User } from '@/types';
 
 interface Props {
     status?: string;
-    className?: string;
 }
 
 defineProps<Props>();
